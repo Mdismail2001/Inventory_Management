@@ -17,7 +17,7 @@ const LoginPage = () => {
         .then((response) =>{
             if (response.data.status === "success") {
                 localStorage.setItem("token",response.data.token);
-                Navigate('/');
+                Navigate('/dashboard');
             }
             else{
                 alert(response.data.message);
@@ -48,9 +48,9 @@ const LoginPage = () => {
                             <hr/>
                             <div className="float-end mt-3">
                                 <span>
-                                    <Link className="text-center ms-3 h6" to="userRegistration.html">Sign Up </Link>
+                                    <Link className="text-center ms-3 h6" to="/register">Sign Up </Link>
                                     <span className="ms-1">|</span>
-                                    <Link className="text-center ms-3 h6" to="sendOtp.html">Forget Password</Link>
+                                    <Link className="text-center ms-3 h6" to="/password-reset">Forget Password</Link>
                                 </span>
                             </div>
                             </form>

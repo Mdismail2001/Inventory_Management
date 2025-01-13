@@ -8,4 +8,14 @@ const myaxios = axios.create({
 });
 
 
+myaxios.interceptors.request.use(function (config) {
+    const token = localStorage.getItem("token");
+    if (token) {
+        config.headers.token = token;
+    }
+    return config;
+});
+
+
+
 export default myaxios
