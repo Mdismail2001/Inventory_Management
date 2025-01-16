@@ -7,8 +7,9 @@ import RegisterPage from './pages/RegisterPage';
 import PasswordReset from './pages/PasswordReset';
 import PasswordResetOPT from './pages/PasswordResetOPT';
 import SetPasswordPage from './pages/SetPasswordPage';
-import DashBoard from './pages/DashBoard';
+import DashBord from './pages/DashBoard';
 import Guard from './component/Guard';
+import DashboardLayout from './layouts/DashboardLayout';
 
 function App() {
 
@@ -21,11 +22,14 @@ function App() {
               <Route path="/password-reset" element={<PasswordReset />} />
               <Route path="/reset-password-otp" element={<PasswordResetOPT />} />
               <Route path="/setnewpassword" element={<SetPasswordPage />}/>
-              <Route element={<Guard/>}>
 
-                <Route path="/dashboard" element={<DashBoard />} /> 
-                
-              </Route>           
+
+              <Route path="/dashboard/" element={<DashboardLayout />} > 
+
+                <Route path="index" element={<DashBord />} />
+
+              </Route>
+        
             </Routes>
         </BrowserRouter>
     );
